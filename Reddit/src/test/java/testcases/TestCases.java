@@ -1,36 +1,27 @@
 package testcases;
 
 import base.CommonAPI;
+import homepage.HomePage;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class TestCases extends CommonAPI {
 
-    @Test
-    public void login() {
-        clickOnElementByXpath("//a[@href='https://www.reddit.com/login' and @class='login-required login-link']");
-        typeOnElementById("user_login", "dummyacct123753");
-        typeOnElementById("passwd_login", "password2");
-        clickOnElementByXpath("//button[@type='submit' and @tabindex='3']");
-    }
+    HomePage homePage = new HomePage();
 
-    @Test
+    @Test(enabled = false)
     public void subscribeToRJokes() {
-        login();
+        homePage.login();
         sleepFor(1);
-        clickOnElementByXpath("//*[@id='sr-header-area']/div/div[1]/span");
-        sleepFor(1);
-        clickOnElementByXpath("//a[@href='https://old.reddit.com/subreddits/' and @class='bottom-option choice']");
-        typeOnElementByXpath("//input[@type='text' and @name='q']", "jokes");
-        clickOnElementByXpath("//input[@type='submit' and @tabindex='22']");
-        sleepFor(3);
-        clickOnElementByLinkText("r/Jokes: Jokes: Get Your Funny On!");
+        homePage.navToRJokes();
         sleepFor(5);
         clickOnElementByXpath("/html/body/div[3]/div[5]/div/span[1]/a[1]");
     }
 
-    @Test
+    @Test(enabled = false)
     public void openLinkInNewWindow() {
-        login();
+        homePage.login();
         sleepFor(1);
         clickOnElementByXpath("//a[@href='https://old.reddit.com/prefs/']");
         sleepFor(3);
@@ -40,9 +31,9 @@ public class TestCases extends CommonAPI {
     }
 
 
-    @Test
+    @Test(enabled = false)
     public void upvoteTopFunny() {
-        login();
+        homePage.login();
         sleepFor(3);
         typeOnElementByXpath("//input[@type='text' and @name='q']", "funny");
         clickOnElementByXpath("//input[@type='submit' and @tabindex='22']");
@@ -55,9 +46,9 @@ public class TestCases extends CommonAPI {
         captureScreenshot(driver,"upvoteTopFunny_");
     }
 
-    @Test//Negative test - should not be able to submit link
+    @Test(enabled = false)//Negative test - should not be able to submit link
     public void submitLink() {
-        login();
+        homePage.login();
         sleepFor(2);
         clickOnElementByXpath("//a[@href='https://old.reddit.com/submit']");
         sleepFor(2);
@@ -70,5 +61,29 @@ public class TestCases extends CommonAPI {
         clickOnElementByXpath("//button[@class='btn' and @name='submit']");
     }
 
+    @Test(enabled = false)
+    public void scrollToMobileWebsiteLink() {
+        scrollIntoView("mobile website");
+    }
 
+    @Test(enabled = false)
+    public void changeLanguage() {
+        clickOnElementByLinkText("English");
+        WebElement element = getElement("//select[@id='lang' and @name='lang']");
+        Select select = new Select(element);
+
+        select.selectByIndex(6);//Changes language on page to Bengali(BD)
+        clickOnElementByXpath("//input[@type='submit' and @class='btn save-preferences']");
+        sleepFor(5);
+    }
+
+    @Test
+    public void savePostFromPostOnRJokes() {
+        homePage.login();
+        sleepFor(3);
+        homePage.navToRJokes();
+        sleepFor(2);
+        clickOnElementByXpath("//a[@href='/r/Jokes/comments/avxog7/rjokes_has_a_discord_and_you_need_to_join/']");
+        clickOnElementByXpath("//*[@class='link-save-button save-button login-required']/a");
+    }
 }
