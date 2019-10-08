@@ -19,18 +19,18 @@ public class PageFactoryTest extends CommonAPI {
         pageFactory = PageFactory.initElements(driver, PageFactoryPage.class);
     }
 
-    @Test(enabled = false)
+    @Test
     public void testLoggedInUsingPageFactory() {
         homePage.login();
         pageFactory.isProfileDisplayed();
     }
 
-    @Test(enabled = false)
+    @Test
     public void testLoggedOutUsingPageFactory() {
         pageFactory.isLoggedOut();
     }
 
-    @Test(enabled = false)
+    @Test
     public void testPostHiddenUsingPageFactory() {
         homePage.login();
         homePage.navToProfile();

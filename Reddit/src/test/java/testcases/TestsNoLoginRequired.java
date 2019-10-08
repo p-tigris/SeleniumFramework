@@ -16,7 +16,7 @@ public class TestsNoLoginRequired extends CommonAPI {
     Subreddit subreddit = new Subreddit();
 
 
-    @Test(enabled = false)
+    @Test
     public void sortRWorldNewsByNew () {
         homePage.searchBox("worldnews");
         clickOnElementByLinkText("World News");
@@ -24,12 +24,12 @@ public class TestsNoLoginRequired extends CommonAPI {
     }
 
 
-    @Test(enabled = false)
+    @Test
     public void scrollToMobileWebsiteLink() {
         scrollIntoView("mobile website");
     }
 
-    @Test(enabled = false)
+    @Test
     public void changeLanguage() {
         clickOnElementByLinkText("English");
         WebElement element = getElement("//select[@id='lang' and @name='lang']");
@@ -40,17 +40,17 @@ public class TestsNoLoginRequired extends CommonAPI {
         sleepFor(5);
     }
 
-    @Test(enabled = false)
+    @Test
     public void subredditsOnNavBar() {
         webElementsList.makeListOfWebElementsText("//*[contains(@class,'choice')]");
     }
 
-    @Test(enabled = false)
+    @Test
     public void aboutLinks() {
         webElementsList.makeListOfWebElementsText("/html//div[@class='footer rounded']/div[1]/ul");
     }
 
-    @Test(enabled = false) //Negative test - cannot sign up for new account because of reCAPTCHA
+    @Test //Negative test - cannot sign up for new account because of reCAPTCHA
     public void signUpNewAccount() {
         clickOnElementByLinkText("sign up");
         sleepFor(3);

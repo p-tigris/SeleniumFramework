@@ -18,18 +18,18 @@ public class TestsLoginRequired extends HomePage {
     Profile profile = new Profile();
     Subreddit subreddit = new Subreddit();
 
-    @Test(enabled = false)
+    @Test
     public void validateLogin() {
         validate.validateLogin();
     }
 
-    @Test(enabled = false)
+    @Test
     public void validateLogout() {
         homePage.logout();
         validate.validateLogout();
     }
 
-    @Test(enabled = false)
+    @Test
     public void subscribeToRJokes() {
         sleepFor(1);
         homePage.navToRJokes();
@@ -38,14 +38,14 @@ public class TestsLoginRequired extends HomePage {
         sleepFor(5);
     }
 
-    @Test(enabled = false)
+    @Test
     public void validateSubscribedToRJokes() {
         sleepFor(3);
         homePage.navToRJokes();
         validate.validateSubscribed("leave");
     }
 
-    @Test(enabled = false)
+    @Test
     public void openLinkInNewWindow() {
         sleepFor(1);
         clickOnElementByXpath("//a[@href='https://old.reddit.com/prefs/']");
@@ -55,7 +55,7 @@ public class TestsLoginRequired extends HomePage {
         clickOnElementByXpath("//input[@type='submit']");
     }
 
-    @Test(enabled = false)
+    @Test
     public void upvoteTopFunny() {
         sleepFor(3);
         typeOnElementByXpath("//input[@type='text' and @name='q']", "funny");
@@ -69,7 +69,7 @@ public class TestsLoginRequired extends HomePage {
         captureScreenshot(driver,"upvoteTopFunny_");
     }
 
-    @Test(enabled = false)
+    @Test
     public void validateUpvotedTopFunny() {
         homePage.navToProfile();
         profile.navToUpvoted();
@@ -77,7 +77,7 @@ public class TestsLoginRequired extends HomePage {
 
     }
 
-    @Test(enabled = false)//Negative test - should not be able to submit link
+    @Test//Negative test - should not be able to submit link
     public void submitLink() {
         sleepFor(2);
         clickOnElementByXpath("//a[@href='https://old.reddit.com/submit']");
@@ -91,7 +91,7 @@ public class TestsLoginRequired extends HomePage {
         clickOnElementByXpath("//button[@class='btn' and @name='submit']");
     }
 
-    @Test(enabled = false)
+    @Test
     public void savePostFromPostOnRJokes() {
         sleepFor(3);
         homePage.navToRJokes();
@@ -100,14 +100,14 @@ public class TestsLoginRequired extends HomePage {
         clickOnElementByXpath("//*[@class='link-save-button save-button login-required']/a");
     }
 
-    @Test(enabled = false)
+    @Test
     public void validateSavedPost() {
         homePage.navToProfile();
         profile.navToSaved();
         validate.validateSaved("//a[contains(@class,'title may-blank loggedin')]");
     }
 
-    @Test(enabled = false)
+    @Test
     public void listOfCommentersOnRJokesPost() {
         homePage.navToProfile();
         profile.navToSaved();
@@ -115,14 +115,14 @@ public class TestsLoginRequired extends HomePage {
         webElementsList.makeListOfWebElementsText("//*[contains(@class, 'author may-blank')]");
     }
 
-    @Test(enabled = false)
+    @Test
     public void userKarma() {
         homePage.navToProfile();
         webElementsList.makeListOfWebElementsText("//*[contains(@class, 'karma')]");
         webElementsList.karmaSum("//*[contains(@class, 'karma')]");
     }
 
-    @Test(enabled = false)
+    @Test
     public void hideTopPostOnRJokes() {
         sleepFor(5);
         subreddit.navToSubreddit("Jokes");
@@ -132,7 +132,7 @@ public class TestsLoginRequired extends HomePage {
         clickOnElementByXpath("//div[@id='siteTable']/div[1]//ul//form[@action='/post/hide']//a[@href='javascript:void(0)']");
     }
 
-    @Test(enabled = false)
+    @Test
     public void mouseHoverUserNameOfPosterOnRJokesAndFollow() {
         sleepFor(5);
         homePage.searchBox("Jokes");
