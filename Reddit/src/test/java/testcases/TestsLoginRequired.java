@@ -2,6 +2,8 @@ package testcases;
 
 import homepage.HomePage;
 import list.WebElementsList;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import profile.Profile;
 import subreddit.Subreddit;
@@ -120,7 +122,7 @@ public class TestsLoginRequired extends HomePage {
         webElementsList.karmaSum("//*[contains(@class, 'karma')]");
     }
 
-    @Test
+    @Test(enabled = false)
     public void hideTopPostOnRJokes() {
         sleepFor(5);
         subreddit.navToSubreddit("Jokes");
@@ -130,5 +132,16 @@ public class TestsLoginRequired extends HomePage {
         clickOnElementByXpath("//div[@id='siteTable']/div[1]//ul//form[@action='/post/hide']//a[@href='javascript:void(0)']");
     }
 
+    @Test(enabled = false)
+    public void mouseHoverUserNameOfPosterOnRJokesAndFollow() {
+        sleepFor(5);
+        homePage.searchBox("Jokes");
+        clickOnElementByLinkText("Jokes: Get Your Funny On!");
+        WebElement element = getElement("//p[contains(@class,'tagline')]//a[@class='author may-blank id-t2_dl4qk'][contains(text(),'love_the_heat')]");
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).build().perform();
+        clickOnElementByXpath("//div[contains(text(),'Follow')]");
+        sleepFor(5);
+    }
 
 }

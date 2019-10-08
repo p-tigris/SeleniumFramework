@@ -12,7 +12,7 @@
 
     <test name="Dropdown and MouseHover tests">
         <classes>
-            <class name="testcases.TestsNoLoginRequired"/>
+            <class name="testcases.TestsLoginRequired"/>
         </classes>
     </test>
 </suite>
