@@ -12,7 +12,6 @@ import validation.Validation;
 
 public class TestsLoginRequired extends HomePage {
 
-    HomePage homePage = new HomePage();
     Validation validate = new Validation();
     WebElementsList webElementsList = new WebElementsList();
     Profile profile = new Profile();
@@ -25,14 +24,14 @@ public class TestsLoginRequired extends HomePage {
 
     @Test
     public void validateLogout() {
-        homePage.logout();
+        logout();
         validate.validateLogout();
     }
 
     @Test
     public void subscribeToRJokes() {
         sleepFor(1);
-        homePage.navToRJokes();
+        navToRJokes();
         sleepFor(5);
         clickOnElementByLinkText("join");
         sleepFor(5);
@@ -41,7 +40,7 @@ public class TestsLoginRequired extends HomePage {
     @Test
     public void validateSubscribedToRJokes() {
         sleepFor(3);
-        homePage.navToRJokes();
+        navToRJokes();
         validate.validateSubscribed("leave");
     }
 
@@ -71,7 +70,7 @@ public class TestsLoginRequired extends HomePage {
 
     @Test
     public void validateUpvotedTopFunny() {
-        homePage.navToProfile();
+        navToProfile();
         profile.navToUpvoted();
         validate.validateUpvoted("//div[@class='arrow upmod login-required access-required']");
 
@@ -94,7 +93,7 @@ public class TestsLoginRequired extends HomePage {
     @Test
     public void savePostFromPostOnRJokes() {
         sleepFor(3);
-        homePage.navToRJokes();
+        navToRJokes();
         sleepFor(2);
         clickOnElementByXpath("//a[@href='/r/Jokes/comments/avxog7/rjokes_has_a_discord_and_you_need_to_join/']");
         clickOnElementByXpath("//*[@class='link-save-button save-button login-required']/a");
@@ -102,14 +101,14 @@ public class TestsLoginRequired extends HomePage {
 
     @Test
     public void validateSavedPost() {
-        homePage.navToProfile();
+        navToProfile();
         profile.navToSaved();
         validate.validateSaved("//a[contains(@class,'title may-blank loggedin')]");
     }
 
     @Test
     public void listOfCommentersOnRJokesPost() {
-        homePage.navToProfile();
+        navToProfile();
         profile.navToSaved();
         clickOnElementByXpath("//a[contains(@class,'title may-blank loggedin')]");
         webElementsList.makeListOfWebElementsText("//*[contains(@class, 'author may-blank')]");
@@ -117,7 +116,7 @@ public class TestsLoginRequired extends HomePage {
 
     @Test
     public void userKarma() {
-        homePage.navToProfile();
+        navToProfile();
         webElementsList.makeListOfWebElementsText("//*[contains(@class, 'karma')]");
         webElementsList.karmaSum("//*[contains(@class, 'karma')]");
     }
@@ -135,7 +134,7 @@ public class TestsLoginRequired extends HomePage {
     @Test
     public void mouseHoverUserNameOfPosterOnRJokesAndFollow() {
         sleepFor(5);
-        homePage.searchBox("Jokes");
+        searchBox("Jokes");
         clickOnElementByLinkText("Jokes: Get Your Funny On!");
         WebElement element = getElement("//p[contains(@class,'tagline')]//a[@class='author may-blank id-t2_dl4qk'][contains(text(),'love_the_heat')]");
         Actions actions = new Actions(driver);
