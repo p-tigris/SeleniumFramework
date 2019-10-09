@@ -7,14 +7,12 @@
     <parameter name="envName" value="browserstack"/>
     <parameter name="browser" value="chrome"/>
     <parameter name="browserVersion" value="77.0"/>
-    <parameter name="url" value="https://old.reddit.com"/>
+    <parameter name="url" value="https://www.netflix.com"/>
     <parameter name="platform" value="mac"/>
 
-    <test name="Dropdown and MouseHover tests">
+    <test name="Validation Test">
         <classes>
-            <class name="testcases.TestsLoginRequired"/>
-            <class name="testcases.TestsNoLoginRequired"/>
-            <class name="testcases.PageFactoryTest"/>
+            <class name="homepagetests.POMResults"/>
         </classes>
     </test>
 </suite>
