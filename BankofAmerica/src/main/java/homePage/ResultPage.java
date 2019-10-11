@@ -13,5 +13,10 @@ public class ResultPage extends CommonAPI {
         Assert.assertEquals(element.isDisplayed(), true, "elment isn't displyed");
         TestLogger.log("Search Result Panel is: "+ element.isDisplayed());
     }
+    public void validateSignInDisplayed(){
+        WebElement element = getElement("//div[@class='main-header on-profiles-gate']");
+        Assert.assertEquals(element.isDisplayed(), true, "elment isn't displyed");
+        TestLogger.log("Manage Panel is: "+ element.isDisplayed());
+    }
 }
 
