@@ -17,6 +17,8 @@ public class SignInTest extends SignIn {
         typePasswordInBar("181WhyNot!");
         clickOnSignInAfterEmailAndPassword();
 
+        profileResults.validateProfilesPageDisplayed();
+
         //profileResults.validateProfilesPageDisplayed();
     }
 
