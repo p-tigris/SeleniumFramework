@@ -24,8 +24,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
@@ -249,8 +251,9 @@ public class CommonAPI {
     public WebElement getElementByLinkText(String locator) {
         return driver.findElement(By.linkText(locator));
     }
-
-
+    public WebElement getElementByxpath(String locator) {
+        return driver.findElement(By.xpath(locator));
+    }
     public void dragNdropByXpaths(String fromLocator, String toLocator) {
         Actions actions = new Actions(driver);
         WebElement from = getElement(fromLocator);
@@ -261,5 +264,29 @@ public class CommonAPI {
     public void scrollIntoView(String locator) {
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", getElementByLinkText(locator));
+    }
+
+    public void navigateBack() {
+        driver.navigate().back();
+    }
+
+    public void navigateForward() {
+        driver.navigate().forward();
+
+    }
+
+    public void typeEnterByXpath(String locator) {
+        driver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
+    }
+
+
+
+    public List<String> getAllLinks() {
+        List<WebElement> webElements = driver.findElements(By.tagName("a"));
+        List<String> stringList = new ArrayList<String>();
+        for (int i= 0; i<webElements.size();i++) {
+            stringList.add(webElements.get(i).getText());
+        }
+        return stringList;
     }
 }

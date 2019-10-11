@@ -7,8 +7,7 @@ import org.openqa.selenium.support.How;
 import org.testng.Assert;
 
 public class HomePage extends CommonAPI {
-   WebElement aboutUs=getElement("/html//a[@id='NAV_ABOUT_US']");
-    WebElement Ourcompany=getElement("Our company");
+
 
     @FindBy(xpath = "/html//a[@id='who-we-are']")
     public static WebElement whoWeAre;
@@ -27,6 +26,9 @@ public class HomePage extends CommonAPI {
 
     @FindBy(how = How.LINK_TEXT, using = "Careers")
     public static WebElement careers;
+
+ WebElement aboutUs=getElement("/html//a[@id='NAV_ABOUT_US']");
+ WebElement Ourcompany=getElement("Our company");
     public  void validateaboutUsDisplayed(){
         Assert.assertEquals(aboutUs.isDisplayed(),true,"aboutUs is Failed");
     }

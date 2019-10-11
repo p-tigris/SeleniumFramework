@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class SigneInButtonTest extends SigneInButton {
     @Test
-    public void validSigneInButton() {
+    public void SigneInButtonWorks() {
         clickOnOlineId();
         typeOnOlineId();
         clickOnPassword();

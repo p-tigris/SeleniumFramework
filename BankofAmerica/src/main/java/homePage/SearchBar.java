@@ -4,8 +4,10 @@ import base.CommonAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import report.TestLogger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchBar extends CommonAPI {
@@ -32,21 +34,10 @@ public class SearchBar extends CommonAPI {
         clickOnElementByXpath("//a[@id='NAV_ABOUT_US']");
         TestLogger.log("About Us Is Clickable");
     }
-
+@Test
     public void clickOnCareer() {
-       clickOnElementByLinkText("Careers");
-       // clickOnElementByXpath("/html[1]/body[1]/div[1]/div[4]/div[1]/div[2]/ul[1]/li[6]/a[1]");
+       clickOnElementByXpath("//a[@href='http://careers.bankofamerica.com/']");
         TestLogger.log("Career Is Clickable");
     }
-
-    public List<WebElement> getAllElementFromList() {
-        //List<WebElement> elementList = driver.findElements(By.xpath("//*[contains(@data-campus-url,'http://campus.bankofamerica.com')]"));
-        //System.out.println(elementList.size());
-        //return elementList;
-        return driver.findElements(By.xpath("//*[contains(@data-campus-url,'http://campus.bankofamerica.com')]"));
-
-    }
-
-
 
 }
