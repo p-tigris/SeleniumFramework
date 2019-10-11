@@ -23,9 +23,10 @@ public class HomePagePOM extends CommonAPI {
     public void ValidateFaqsDisplayed(){
         Assert.assertEquals(faqs.isDisplayed(),true);
     }
-//    public void ValidateFaqButtonClickable(){
+    public void ValidateFaqButtonClickable() {
 //        faqs.click();
 //        Assert.assertEquals(faqs.isDisplayed(),true);
 //    }
+    }
 }
 

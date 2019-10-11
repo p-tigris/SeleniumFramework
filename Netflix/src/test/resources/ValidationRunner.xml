@@ -12,7 +12,7 @@
 
     <test name="Validation Test">
         <classes>
-            <class name="homepagetests.POMResults"/>
+            <class name="testcases.POMResults"/>
         </classes>
     </test>
 </suite>

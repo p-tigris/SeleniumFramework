@@ -12,7 +12,7 @@
 
     <test name="Automation Test">
         <classes>
-            <class name=""/>
+            <class name="testcases.SignInTest"/>
         </classes>
     </test>
 </suite>
