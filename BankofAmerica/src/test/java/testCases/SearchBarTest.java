@@ -2,11 +2,12 @@ package testCases;
 
 import homePage.ResultPage;
 import homePage.SearchBar;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.List;
-
 
 public class SearchBarTest extends SearchBar {
 
@@ -18,7 +19,6 @@ public class SearchBarTest extends SearchBar {
         clickOnCareer();
     }
 
-
     @Test(enabled = false)
     public void validateSearchButtonWork() {
         clickSearchBar();
@@ -27,21 +27,4 @@ public class SearchBarTest extends SearchBar {
         resultPage.validateResultPageDisplyed();
     }
 
-    @Test(enabled = false)
-    public void getAllDropDownLocations() {
-        clickAboutUs();
-        clickOnCareer();
-        getAllElementFromList();
-    }
-
-    @Test(enabled = false)
-    public void getAllDropDownLocations1() {
-        clickAboutUs();
-        clickOnCareer();
-        List<WebElement> elementList = getAllElementFromList();
-        System.out.println(elementList.size());
-        for (int i = 0; i < elementList.size(); i++) {
-            System.out.println(elementList.get(i).getText());
-        }
-    }
 }
