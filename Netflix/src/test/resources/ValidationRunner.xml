@@ -12,7 +12,7 @@
 
     <test name="Validation Test">
         <classes>
-            <class name="testcases.POMResults"/>
+            <class name="manageprofilespack.ProfilesTest"/>
         </classes>
     </test>
 </suite>

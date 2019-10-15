@@ -1,9 +1,14 @@
 package homepage;
 
 import base.CommonAPI;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import report.TestLogger;
 
 public class SignIn extends CommonAPI {
+
+    @FindBy(xpath = "//input[@name='userLoginId']")
+    WebElement emailTextBox;
 
     public void redButtonIsDisplayed(){
         isElementDisplayed("//a[@href='/login']");
@@ -33,5 +38,13 @@ public class SignIn extends CommonAPI {
     public void typePasswordInBar(String value){
         typeOnElementByXpath("//input[@id='id_password']",value);
         TestLogger.log(value + "Password portion typed in");
+    }
+
+    public void loginNetflix(){
+        clickOnSignInButton();
+        emailTextBox.sendKeys("mr.hraihan@gmail.com");
+        clickPasswordBar();
+        typePasswordInBar("MyFeetHurtSomeTimes");
+        clickOnSignInAfterEmailAndPassword();
     }
 }

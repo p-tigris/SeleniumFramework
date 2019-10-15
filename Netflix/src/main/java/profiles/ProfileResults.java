@@ -8,7 +8,7 @@ import report.TestLogger;
 public class ProfileResults extends CommonAPI {
 
     public void validateProfilesPageDisplayed(){
-        WebElement element = getElement("//div[@id='appMountPoint']/div[@class='netflix-sans-font-loaded']/div//div[@class='bd dark-background']//a[@href='/ManageProfiles']");
+        WebElement element = getElement("//span[contains(text(),'Add Profile')]");
         // will get the element and convert that element of the string
         Assert.assertEquals(element.isDisplayed(), true, "element is not displayed");
         // message will come if it is not displayed we need a negative message if the assert fails
