@@ -17,16 +17,16 @@ public class DropDownTest extends DropDown {
     // print list out all element in side drop down
     @Test(enabled = false)
     public void getAllDropDownLocations() {
-        clickAboutUs();
-        clickOnCareer();
+        //clickAboutUs();
+        //clickOnCareer();
         getAllElementFromList();
 
     }
     // print all the text and stored all the text inside arrayList
     @Test
     public void getAllDropDownLocations1() {
-        clickAboutUs();
-        clickOnCareer();
+        //clickAboutUs();
+        //clickOnCareer();
         List<WebElement> elementList = driver.findElements(By.xpath("//*[contains(@data-campus-url,'http://campus.bankofamerica.com')]"));
        // print all the text
         for (int i= 0; i<elementList.size();i++) {
@@ -42,10 +42,10 @@ public class DropDownTest extends DropDown {
     }
 
 
-    @Test
+    @Test(enabled = false)
     public void testDropDown() {
-        clickAboutUs();
-        clickOnCareer();
+        //clickAboutUs();
+       // clickOnCareer();
         WebElement element = getElement("//select[@id='sel-country-list']");
         Select select = new Select(element);
         System.out.println(element);

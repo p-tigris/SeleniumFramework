@@ -16,7 +16,7 @@ public class SearchBarTest extends SearchBar {
     @Test
     public void clickOnCareer() {
         clickAboutUs();
-        clickOnCareer();
+        //clickOnCareer();
     }
 
     @Test(enabled = false)

@@ -8,15 +8,15 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class BackAndForward extends SearchBar {
-    @Test(enabled = false)
+    @Test
     public void forwardAndBackwardOnAboutUs() {
         clickAboutUs();
         navigateBack();
         navigateForward();
     }
-    @Test
+    @Test(enabled = false)
     public void enterButtonWorks() {
         typeEnterByXpath("/html//a[@id='NAV_ABOUT_US']");
-
+        System.out.println(getAllLinks());
     }
 }

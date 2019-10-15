@@ -7,12 +7,12 @@
     <parameter name="envName" value="saucelab"/>
     <parameter name="browser" value="chrome"/>
     <parameter name="browserVersion" value="77.0"/>
-    <parameter name="url" value="https://www.bankofamerica.com"/>
+    <parameter name="url" value="https://careers.bankofamerica.com"/>
     <parameter name="platform" value="windows"/>
 
     <test name="Automation test">
         <classes>
-            <class name="testCases.HomePageTest"/>
+            <class name="testCases.DropDownTest"/>
         </classes>
     </test>
 </suite>

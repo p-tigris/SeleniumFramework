@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import report.TestLogger;
 
 public class MouseHover extends SearchBar {
-    @Test(enabled = false)
+    @Test
     public void testMouseHover() {
         clickAboutUs();
         WebElement element = getElementByLinkText("Newsroom");
@@ -19,13 +19,5 @@ public class MouseHover extends SearchBar {
         sleepFor(3);
     }
 
-    @Test
-    public void scrollInToView() {
-        clickAboutUs();
-        WebElement element = getElement("//div[@id='lb-wrap-0']//ul/li[13]/p");
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
-        sleepFor(10);
-
     }
-}
+
