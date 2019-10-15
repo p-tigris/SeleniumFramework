@@ -251,9 +251,17 @@ public class CommonAPI {
     public WebElement getElementByLinkText(String locator) {
         return driver.findElement(By.linkText(locator));
     }
+
+
     public WebElement getElementByxpath(String locator) {
         return driver.findElement(By.xpath(locator));
     }
+
+
+    public WebElement getElementByxpath(String locator) {
+        return driver.findElement(By.xpath(locator));
+    }
+
     public void dragNdropByXpaths(String fromLocator, String toLocator) {
         Actions actions = new Actions(driver);
         WebElement from = getElement(fromLocator);
@@ -279,14 +287,33 @@ public class CommonAPI {
         driver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
     }
 
+    public void uploadFileByXpath(String path,String locator){
+        driver.findElement(By.xpath(locator)).sendKeys(path);
+    }
+    public void clearFieldByXpath(String locator){
+        driver.findElement(By.xpath(locator)).click();
+    }
+    public void getAllLink(){
+        driver.findElement(By.tagName("a")).getText();
+    }
+
+
+
 
 
     public List<String> getAllLinks() {
         List<WebElement> webElements = driver.findElements(By.tagName("a"));
         List<String> stringList = new ArrayList<String>();
+
+        for (int i = 0; i < webElements.size(); i++) {
+            stringList.add(webElements.get(i).getText());
+        }
+      return stringList;
+
         for (int i= 0; i<webElements.size();i++) {
             stringList.add(webElements.get(i).getText());
         }
         return stringList;
+
     }
 }

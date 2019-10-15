@@ -7,7 +7,9 @@ import org.testng.annotations.Test;
 
 
 public class IframeTest extends CommonAPI {
-    @Test
+
+    @Test(enabled = false)
+
     public void iframeTest() {
         clickOnElementByXpath("//a[@id='NAV_ABOUT_US']");
         driver.switchTo().frame(0);

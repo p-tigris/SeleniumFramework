@@ -20,7 +20,8 @@ public class SigneInButton extends CommonAPI {
     }
     public void typeOnPassword(){
         typeOnElementByXpath("//input[@id='passcode1']","mesay50");
-        TestLogger.log("Password Filed Is TypeAble");
+
+    TestLogger.log("Password Filed Is TypeAble");
     }
     public void selectOlineId(){
         isElementSelected("//input[@id='saveOnlineId']");
