@@ -22,6 +22,6 @@ public class DropDown extends CommonAPI {
     public void getAllElementFromList(){
         List<WebElement> elementList = driver.findElements(By.xpath("//*[contains(@data-campus-url,'http://campus.bankofamerica.com')]"));
         System.out.println(elementList.size());
-//https://careers.bankofamerica.com/
+ master
     }
 }

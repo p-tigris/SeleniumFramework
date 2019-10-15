@@ -252,6 +252,12 @@ public class CommonAPI {
         return driver.findElement(By.linkText(locator));
     }
 
+
+    public WebElement getElementByxpath(String locator) {
+        return driver.findElement(By.xpath(locator));
+    }
+
+
     public WebElement getElementByxpath(String locator) {
         return driver.findElement(By.xpath(locator));
     }
@@ -280,6 +286,7 @@ public class CommonAPI {
     public void typeEnterByXpath(String locator) {
         driver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
     }
+
     public void uploadFileByXpath(String path,String locator){
         driver.findElement(By.xpath(locator)).sendKeys(path);
     }
@@ -291,12 +298,22 @@ public class CommonAPI {
     }
 
 
+
+
+
     public List<String> getAllLinks() {
         List<WebElement> webElements = driver.findElements(By.tagName("a"));
         List<String> stringList = new ArrayList<String>();
+
         for (int i = 0; i < webElements.size(); i++) {
             stringList.add(webElements.get(i).getText());
         }
       return stringList;
+
+        for (int i= 0; i<webElements.size();i++) {
+            stringList.add(webElements.get(i).getText());
+        }
+        return stringList;
+
     }
 }

@@ -13,4 +13,3 @@ public class ResultPage extends CommonAPI {
         TestLogger.log("Search Result Panel is: "+ element.isDisplayed());
     }
 }
-

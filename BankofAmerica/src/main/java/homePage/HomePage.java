@@ -8,6 +8,7 @@ import org.testng.Assert;
 
 public class HomePage extends CommonAPI {
 
+
     @FindBy(xpath = "//a[contains(@id, 'NAV_ABOUT_US')]")
     public static WebElement aboutUs;
 
@@ -27,11 +28,21 @@ public class HomePage extends CommonAPI {
     @FindBy(xpath = "//a[@id='what-guides-us']")
     public static WebElement Whatguidesus;
 
+
     public void validateWhatGuidesUs() {
         Whatguidesus.click();
         //clickOnElementByXpath("a[@id='what-guides-us']");
         sleepFor(4);
         Assert.assertEquals(Whatguidesus.isDisplayed(), true, "Whatguidesus is not displayed");
+
+    @FindBy(how = How.LINK_TEXT, using = "Careers")
+    public static WebElement careers;
+
+ WebElement aboutUs=getElement("/html//a[@id='NAV_ABOUT_US']");
+ WebElement Ourcompany=getElement("Our company");
+    public  void validateaboutUsDisplayed(){
+        Assert.assertEquals(aboutUs.isDisplayed(),true,"aboutUs is Failed");
+
     }
 
     @FindBy(how = How.XPATH, using = "/html//a[@id='partnering-locally']")

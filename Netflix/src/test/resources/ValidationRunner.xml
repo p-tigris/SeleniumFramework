@@ -4,19 +4,15 @@
 <suite name="Selenium Test Suite" parallel="false">
 
     <parameter name="cloud" value="false"/>
-    <parameter name="envName" value="saucelab"/>
+    <parameter name="envName" value="browserstack"/>
     <parameter name="browser" value="chrome"/>
     <parameter name="browserVersion" value="77.0"/>
-    <parameter name="url" value="https://www.bankofamerica.com"/>
-    <parameter name="platform" value="windows"/>
+    <parameter name="url" value="https://www.netflix.com"/>
+    <parameter name="platform" value="mac"/>
 
-    <test name="Automation test">
+    <test name="Validation Test">
         <classes>
-
-            <class name="testCases.HomePageTest"/>
-
-            <class name="testCases.IframeTest"/>
-
+            <class name="testcases.POMResults"/>
         </classes>
     </test>
 </suite>
