@@ -12,6 +12,7 @@ public class ProfilesTest extends CommonAPI {
 
     public void accessProfile(){
         this.manageProfiles = PageFactory.initElements(driver, ManageProfiles.class);
+        // this equals to the actual class makes connection with the class
     }
     public void accessSignIn(){
         this.signIn = PageFactory.initElements(driver, SignIn.class);
