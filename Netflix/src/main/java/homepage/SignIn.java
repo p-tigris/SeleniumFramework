@@ -44,7 +44,7 @@ public class SignIn extends CommonAPI {
         clickOnSignInButton();
         emailTextBox.sendKeys("mr.hraihan@gmail.com");
         clickPasswordBar();
-        typePasswordInBar("181WhyNot!");
+        typePasswordInBar("ThisIsForClass");
         clickOnSignInAfterEmailAndPassword();
     }
 }
