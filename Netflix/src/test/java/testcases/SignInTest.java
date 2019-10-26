@@ -19,7 +19,7 @@ public class SignInTest extends SignIn {
         clickEmailInBar();
         typeEmailInBar("mr.hraihan@gmail.com");
         clickPasswordBar();
-        typePasswordInBar("181WhyNot!");
+        typePasswordInBar("ThisIsForClass");
         clickOnSignInAfterEmailAndPassword();
         accessProfileResults();
         profileResults.validateProfilesPageDisplayed();
